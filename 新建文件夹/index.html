@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div.jz{
+        padding: 27px;
+    }
+    </style>
+</head>
+<body style="margin: 0px;" >
+    <div>
+        <a href="http://www.cs.3618.org">
+        <img
+            src="Clear server.png" alt="" width="100%" height="width / 18" 
+            style="vertical-align: bottom;"
+        ></img>
+        </a> 
+    </div>
+</body>
+<body>
+    <style>
+        .ren{ 
+            width: 150px;
+            height: 90px;
+            background:#2F4F4F;
+            border-radius:30%;
+        }
+    </style>
+    <style>
+        .js{
+            width: 500px;
+            height: 100px;
+            background-color: rgb(0, 0, 0);
+            margin: auto;
+            margin-top: 0%;
+	        position: absolute;
+	        top: 1;
+            left: 0;
+            right: 0;
+            border:5px solid #000000;
+            border-radius:0PX 0PX 30PX 30PX;
+        }
+    </style>
+    <div class="ren" style="display: flex;">
+        <div class="jz" style="border: #ffffff 5px solid;">
+            <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $.ajax({
+                url: 'https://api.imlazy.ink/mcapi/?host=3618.org&port=25565&type=json',
+                type: 'get',
+                dataType: 'json',  
+                crossDomain: true,
+                 success: function(response, status){
+                                console.log('请求生存服数据：' + status);
+                                console.log(response);
+                                $('#scplayer').replaceWith(response.players_online + ' 人');
+                                $('#scstatus').replaceWith('当前服务器' + response.status);//服务器开启或关闭状态
+                            }, 
+                data: {},
+            });
+            </script>
+        <span id="scstatus">服务器人数检测中</span> <span id="scplayer"></span>
+        </div>
+            <div class="js">
+                <font color="#808080"> 服务器介绍qqqqqqwwwwwwqqqqqq </font> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
